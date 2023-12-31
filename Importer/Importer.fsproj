@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Common.fs" />
+        <Compile Include="Utils.fs" />
+        <Compile Include="XmlUtils.fs" />
+        <Compile Include="PdfUtils.fs" />
+        <Compile Include="AlphaDirectState.fs" />
+        <Compile Include="LegacyAlphaDirectOperations.fs" />
+        <Compile Include="ActualAlphaDirectOperations.fs" />
+        <Compile Include="AlphaDirectOperations.fs" />
+        <Compile Include="TinkoffState.fs" />
+        <Compile Include="TinkoffOperations.fs" />
+        <Compile Include="StateImporter.fs" />
+        <Compile Include="OperationImporter.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="ClosedXML" Version="0.95.4" />
+      <PackageReference Include="FsToolkit.ErrorHandling" Version="2.10.0" />
+      <PackageReference Include="itext7" Version="7.2.0" />
+      <PackageReference Include="runtime.osx.10.10-x64.CoreCompat.System.Drawing" Version="6.0.5.128" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:InvestmentAnalyzer.DesktopClient.ViewModels;assembly=DesktopClient.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="InvestmentAnalyzer.DesktopClient.Views.DashboardWindow"
+        Title="DashboardWindow">
+
+    <Design.DataContext>
+        <viewModels:DashboardWindowViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Margin="10" Spacing="5">
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding ShowAssets}">Assets</Button>
+            <Button Command="{Binding ShowAssetPlot}">Plot</Button>
+        </StackPanel>
+        <Button Command="{Binding ShowOperations}">Operations</Button>
+        <Button Command="{Binding ShowBrokers}">Brokers</Button>
+        <Button Command="{Binding ShowTags}">Tags</Button>
+        <Button Command="{Binding ShowGroups}">Groups</Button>
+        <Button Command="{Binding ShowImportState}">Import State</Button>
+        <Button Command="{Binding ShowImportOperations}">Import Operations</Button>
+        <Button Command="{Binding ShowAssetAnalyze}">Analyze Assets</Button>
+        <Button Command="{Binding ClearLog}">Clear Log</Button>
+        <Label>Log:</Label>
+        <TextBox IsReadOnly="True" Text="{Binding LogText.Value}" MaxHeight="200"></TextBox>
+    </StackPanel>
+</Window>

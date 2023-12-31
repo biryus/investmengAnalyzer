@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.10" />
+        <PackageReference Include="OxyPlot.Avalonia" Version="2.1.0-20210506.4" />
+        <PackageReference Include="ReactiveProperty" Version="8.0.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\DesktopClient.Services\DesktopClient.Services.csproj" />
+      <ProjectReference Include="..\State\State.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+    <None Remove=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.10.10" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.10.10" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.10" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.10" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.10" />
+    <PackageReference Include="ReactiveProperty" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Assets\avalonia-logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DesktopClient.ViewModels\DesktopClient.ViewModels.csproj" />
+    <ProjectReference Include="..\State\State.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\BrokerManagementWindow.axaml.cs">
+      <DependentUpon>BrokerManagementWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ImportStateManagementWindow.axaml.cs">
+      <DependentUpon>ImportManagementWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ImportOperationsManagementWindow.axaml.cs">
+      <DependentUpon>ImportOperationsManagementWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\OperationsWindow.axaml.cs">
+      <DependentUpon>OperationsWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TagManagementWindow.axaml.cs">
+      <DependentUpon>TagManagementWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\GroupManagementWindow.axaml.cs">
+      <DependentUpon>GroupManagementWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddGroupWindow.axaml.cs">
+      <DependentUpon>AddGroupWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddGroupEntryWindow.axaml.cs">
+      <DependentUpon>AddGroupEntryWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AssetAnalyzeWindow.axaml.cs">
+      <DependentUpon>AssetAnalyzeWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddAssetSizeAnalyzerWindow.axaml.cs">
+      <DependentUpon>AddAssetSizeAnalyzerWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddGroupSizeAnalyzerWindow.axaml.cs">
+      <DependentUpon>AddGroupSizeAnalyzerWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddAnalyzerWindow.axaml.cs">
+      <DependentUpon>AddAnalyzerWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
